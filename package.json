@@ -1,0 +1,32 @@
+{ "name": "timestring-notsep",
+  "version": "1.0.0",
+  "description": "Tiny wrapper around timestring (parser for human-readable durations) that fails loudly if you accidentially use a thousand separator.",
+  "keywords": [ "time", "duration", "parser", "intl" ],
+
+  "author": "M.K. (https://github.com/mk-pmb)",
+  "homepage": "https://github.com/mk-pmb/timestring-notsep-js/#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mk-pmb/timestring-notsep-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mk-pmb/timestring-notsep-js/issues"
+  },
+  "contributors": [],
+
+  "private": false, "license": "ISC",
+
+  "main": "ts.js",
+  "scripts": { "test": "nodejs test/basics.js" },
+  "directories": { "test": "test" },
+
+  "dependencies": {
+    "timestring": "^5.0.1"
+  },
+  "devDependencies": {
+    "usnam-pmb": "^0.2.3"
+  },
+
+
+  "npm vs. BOM = Unexpected token": "-*- coding: UTF-8 -*-"
+}
