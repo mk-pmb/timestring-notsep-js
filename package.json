@@ -1,5 +1,5 @@
 { "name": "timestring-notsep",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tiny wrapper around timestring (parser for human-readable durations) that fails loudly if you accidentially use a thousand separator.",
   "keywords": [ "time", "duration", "parser", "intl" ],
 

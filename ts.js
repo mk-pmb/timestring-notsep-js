@@ -3,12 +3,21 @@
 'use strict';
 module.exports = (function () {
   var ts = require('timestring');
-  function inval(why) { throw new Error('Invalid duration: ' + why); }
+  function inval(x, why) {
+    var err = new Error('Invalid duration: ' + why);
+    err.name = 'InvalidDuration';
+    err.invalid = why;
+    err.spec = x;
+    throw err;
+  }
   function parseTimeStringNoTSep(x) {
-    if (!/\d/.test(x)) { inval('Found no number'); }
-    if (!/[a-z]/.test(x)) { inval('Found no time unit'); }
-    if (/,\d/.test(x)) { inval('Comma directly preceding a number'); }
-    if (/\.\d*\./.test(x)) { inval('Number can only have one decimal point'); }
+    x = String(x || '');
+    if (!/[a-z]/.test(x)) { inval(x, 'Found no time unit'); }
+    if (!/\d/.test(x)) { inval(x, 'Found no number'); }
+    if (/,\d/.test(x)) { inval(x, 'Comma directly preceding a number'); }
+    if (/\.\d*\./.test(x)) {
+      inval(x, 'Number can have at most one decimal point');
+    }
     return ts(x);
   }
   return parseTimeStringNoTSep;

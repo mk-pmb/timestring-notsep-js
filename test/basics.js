@@ -19,6 +19,13 @@ function t(x, want, y) {
 }
 
 
+t(false, /no time unit/i);
+t(true, /found no number/i);
+t({}, /found no number/i);
+t('', /no time unit/i);
+t(0, /no time unit/i);
+t(2, /no time unit/i);
+t(Number.POSITIVE_INFINITY, /found no number/i);
 t('1.002', /no time unit/i);
 t('1,002', /no time unit/i);
 t('1,002 min', /comma/i);
