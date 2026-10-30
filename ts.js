@@ -12,8 +12,8 @@ module.exports = (function () {
     throw err;
   }
 
-  EX = function parseTimeStringNoTSep(x) {
-    x = String(x || '');
+  EX = function parseDuraNoTSep(hrDura) {
+    var x = String(hrDura || '');
     if (!/[a-z]/.test(x)) { inval(x, 'Found no time unit'); }
     if (!/\d/.test(x)) { inval(x, 'Found no number'); }
     if (/,\d/.test(x)) { inval(x, 'Comma directly preceding a number'); }
